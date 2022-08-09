@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fast Properties</title>
+  </head>
+  <body>
+    <script>
+      function MyObject() {}
+
+      function setProperties(obj, propertyCount, elementCount) {
+        //添加常规属性
+        for (let i = 0; i < propertyCount; i++) {
+          let ppt = `property${i}`;
+          obj[ppt] = ppt;
+        }
+        // 排序属性
+        for (let i = 0; i < elementCount; i++) {
+          obj[i] = `element${i}`;
+        }
+      }
+
+      const obj = new MyObject();
+
+      setProperties(obj, 20, 0);
+
+      // 防止回收
+      console.log("obj", obj);
+    </script>
+  </body>
+</html>
