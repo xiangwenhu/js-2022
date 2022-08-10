@@ -7,24 +7,16 @@
     <title>Fast Properties</title>
   </head>
   <body>
+
+    <script src="./util.js"></script>
     <script>
       function MyObject() {}
 
-      function setProperties(obj, propertyCount, elementCount) {
-        //添加常规属性
-        for (let i = 0; i < propertyCount; i++) {
-          let ppt = `property${i}`;
-          obj[ppt] = ppt;
-        }
-        // 排序属性
-        for (let i = 0; i < elementCount; i++) {
-          obj[i] = `element${i}`;
-        }
-      }
 
       const obj = new MyObject();
 
-      setProperties(obj, 20, 0);
+      // 设置20个普通属性
+      setProperties(obj, 15, 5);
 
       // 防止回收
       console.log("obj", obj);

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hidden Class 隐藏类</title>
+    <link rel="stylesheet" href="./index.css">
+</head>
+
+<body>
+
+
+    <div class="container">
+        <div class="actions">
+            <button type="button" id="btnAdd">添加属性</button>
+        </div>
+        <div class="messages" id="messages"></div>
+    </div>
+
+
+
+    <script src="./util.js"></script>
+    <script>
+
+        // 设置消息
+        function setMessage(message) {
+            messages.innerHTML = toString(message);
+        }
+        
+        function MyObject() { }
+
+        const obj = new MyObject();
+        setProperty(obj, 'p1', 'v1');
+
+        const obj2 = new MyObject();
+        setProperty(obj2, 'p1', 'v1');
+    
+        setMessage(obj)
+
+    </script>
+
+</body>
+
+</html>

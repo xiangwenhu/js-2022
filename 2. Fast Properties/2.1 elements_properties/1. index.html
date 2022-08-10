@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elements And Properties</title>
+</head>
+
+<body>
+    <script src="./util.js"></script>
+    <script>
+        function MyObject() { }
+
+        const obj = new MyObject();
+
+        // 设置15个普通属性
+        // 15 = 10个内属性 + 5个properties
+        setProperties(obj, 15, 5);
+
+        // 防止回收
+        console.log("obj", obj);
+    </script>
+</body>
+
+</html>
