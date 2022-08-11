@@ -28,3 +28,16 @@ function isObject(obj) {
 function toString(data) {
     return isObject(data) ? JSON.stringify(data) : `${data}`
 }
+
+const utils = {
+    setProperties,
+    setProperty,
+    addEvent,
+    isObject,
+    toString
+}
+
+
+if(module && module.exports) {
+    module.exports = utils
+}

@@ -34,6 +34,6 @@ for (let index = 0; index <= inlineCacheCutoff; index++) {
 	FastObject();
 }
 
-module.exports = function toFastproperties(object) {
+module.exports = function toFastProperties(object) {
 	return FastObject(object);
 }
