@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>web worker计时器</title>
+  </head>
+
+  <body>
+    <div>
+      剩余次数:
+      <div id="leftCount"></div>
+    </div>
+
+    <script>
+      (function () {
+        let lastTime = performance.now();
+        function setCount(count) {
+          leftCount.innerHTML = `${count}次`;
+          const now = performance.now();
+          console.log(
+            "setTimeout count:",
+            count,
+            "  cost:",
+            now - lastTime
+          );
+          lastTime = now;
+        }
+        let counts = 60;
+
+        setCount(counts);
+
+        console.log("setTimeout startTime:", performance.now());
+        function plan() {
+          setTimeout(function () {
+            counts--;
+            setCount(counts);
+            if (counts > 1) {
+              plan();
+            }
+          }, 200);
+        }
+        plan();
+      })();
+    </script>
+   
+  </body>
+</html>
