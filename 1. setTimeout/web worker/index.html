@@ -1,73 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>web worker计时器</title>
-</head>
+  </head>
 
-<body>
-
-
+  <body>
     <div>
-        剩余时间:
-        <div id="leftSeconds"></div>
+      剩余时间:
+      <div id="leftSeconds"></div>
+    </div>
+    <div>
+      剩余时间:
+      <div id="leftSecondsWK"></div>
     </div>
 
     <script>
-
+      (function () {
+        let lastTime = performance.now();
         function setSeconds(seconds) {
-            leftSeconds.innerHTML = `${seconds}秒`;
-            console.log('seconds:', seconds)
+          leftSeconds.innerHTML = `${seconds}秒`;
+          const now = performance.now();
+          console.log(
+            "setTimeout seconds:",
+            seconds,
+            "  cost:",
+            now - lastTime
+          );
+          lastTime = now;
+        }
+        let seconds = 60;
+
+        setSeconds(seconds);
+
+        console.log("setTimeout startTime:", performance.now());
+        function plan() {
+          setTimeout(function () {
+            seconds--;
+            setSeconds(seconds);
+            if (seconds > 1) {
+              plan();
+            }
+          }, 1000);
+        }
+        plan();
+      })();
+    </script>
+    <script>
+      // web worker setTimout
+      (function () {
+        let lastTime = performance.now();
+        function setSeconds(seconds) {
+          leftSecondsWK.innerHTML = `${seconds}秒`;
+          const now = performance.now();
+          console.log(
+            "setTimeoutWorker seconds:",
+            seconds,
+            "  cost:",
+            now - lastTime
+          );
+          lastTime = now;
         }
         let seconds = 60;
 
         setSeconds(seconds);
         const worker = new Worker("./wk_timeout.js");
 
-
         const setTimeoutCallbacks = {};
         function setWKTimeout(fn, delay) {
-            setTimeoutCallbacks[seconds] = fn;
-            worker.postMessage({
-                type: "setTimeout",
-                key: seconds,
-                delay
-            })
+          setTimeoutCallbacks[seconds] = fn;
+          worker.postMessage({
+            type: "setTimeout",
+            key: seconds,
+            delay,
+          });
         }
 
         worker.onmessage = function (ev) {
-            const {data} = ev;
-            if (!data || !data.type) {
-                return
-            }
-            const { type, key } = data;
-            let ticket;
-            switch (type) {
-                case 'setTimeout':
-                    setTimeoutCallbacks[key].call(null);
-                    delete setTimeoutCallbacks[key];
-                default:
-                    break
-            }
-        }
+          const { data } = ev;
+          if (!data || !data.type) {
+            return;
+          }
+          const { type, key } = data;
+          let ticket;
+          switch (type) {
+            case "setTimeout":
+              setTimeoutCallbacks[key].call(null);
+              delete setTimeoutCallbacks[key];
+            default:
+              break;
+          }
+        };
 
-
+        console.log("setWKTimeout:", performance.now());
         function plan() {
-            setTimeout(function () {
-                seconds--;
-                setSeconds(seconds);
-                if (seconds > 1) {
-                    plan();
-                }
-            }, 1000)
+          setWKTimeout(function () {
+            seconds--;
+            setSeconds(seconds);
+            if (seconds > 1) {
+              plan();
+            }
+          }, 1000);
         }
         plan();
-
-
+      })();
     </script>
-</body>
-
+  </body>
 </html>

@@ -3,7 +3,6 @@
 const timeoutTickets = {}
 
 onmessage = function (e) {
-    console.log('Web Worker: Message received from main script');
     const data = e.data;
     if (!data || !data.type) {
         return
@@ -13,7 +12,7 @@ onmessage = function (e) {
     switch (type) {
         case 'setTimeout':
             ticket = setTimeout(function () {
-                console.log("setTimeout callback")
+                // console.log("setTimeout callback")
                 postMessage({
                     type,
                     key
