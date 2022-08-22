@@ -68,16 +68,6 @@
         setSeconds(seconds);
         const worker = new Worker("./wk_timeout.js");
 
-        const setTimeoutCallbacks = {};
-        function setWKTimeout(fn, delay) {
-          setTimeoutCallbacks[seconds] = fn;
-          worker.postMessage({
-            type: "setTimeout",
-            key: seconds,
-            delay,
-          });
-        }
-
         worker.onmessage = function (ev) {
           const { data } = ev;
           if (!data || !data.type) {
@@ -93,6 +83,16 @@
               break;
           }
         };
+
+        const setTimeoutCallbacks = {};
+        function setWKTimeout(fn, delay) {
+          setTimeoutCallbacks[seconds] = fn;
+          worker.postMessage({
+            type: "setTimeout",
+            key: seconds,
+            delay,
+          });
+        }
 
         console.log("setWKTimeout:", performance.now());
         function plan() {
