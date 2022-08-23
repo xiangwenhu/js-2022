@@ -13,9 +13,12 @@
       <div id="leftSeconds"></div>
     </div>
     <div>
-      剩余时间:
+      剩余时间（web worker）:
       <div id="leftSecondsWK"></div>
     </div>
+
+    <script src="../../libs/eruda.js"></script>
+    <script>eruda.init();</script>
 
     <script>
       (function () {
@@ -66,8 +69,10 @@
         let seconds = 60;
 
         setSeconds(seconds);
+        // 记录回调
+        const setTimeoutCallbacks = {};
+        // web worker 监听消息
         const worker = new Worker("./wk_timeout.js");
-
         worker.onmessage = function (ev) {
           const { data } = ev;
           if (!data || !data.type) {
@@ -75,16 +80,18 @@
           }
           const { type, key } = data;
           let ticket;
+          // 判断类型
           switch (type) {
             case "setTimeout":
+              // 执行回调
               setTimeoutCallbacks[key].call(null);
+              // 删除回调信息
               delete setTimeoutCallbacks[key];
             default:
               break;
           }
         };
 
-        const setTimeoutCallbacks = {};
         function setWKTimeout(fn, delay) {
           setTimeoutCallbacks[seconds] = fn;
           worker.postMessage({

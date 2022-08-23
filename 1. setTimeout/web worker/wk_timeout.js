@@ -11,8 +11,8 @@ onmessage = function (e) {
     let ticket;
     switch (type) {
         case 'setTimeout':
+            // 计时到期，执行回调（发送消息）
             ticket = setTimeout(function () {
-                // console.log("setTimeout callback")
                 postMessage({
                     type,
                     key
