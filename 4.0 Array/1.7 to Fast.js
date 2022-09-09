@@ -10,7 +10,7 @@ array1[1027] = 1027;
 // 
 for (let index = 3; index < 600; index++) {
 
-    if(index === 82){
+    if(index === 83){
         console.log('index:before', index);
         %DebugPrint(array1);
         console.log('index:after', index);
@@ -25,4 +25,4 @@ for (let index = 3; index < 600; index++) {
 
 // %DebugPrint(array1);
 
-//  node --allow-natives-syntax  "4.0 Array\1.6 to Fast.js"
+//  node --allow-natives-syntax  "4.0 Array\1.7 to Fast.js"

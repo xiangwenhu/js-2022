@@ -5,18 +5,18 @@ var array1 = new Array(499);
 // NumberDictionary::ComputeCapacity(used_elements): 43 => 64  =>  64
 // size_threshold : 3 * 3 *  64  = 576
 // size_threshold <= new_capacity =>  576 <= 766 => true
-// for (let i = 0; i < 43; i++) {
-//     array1[i] = i;
-// }
+for (let i = 0; i < 43; i++) {
+    array1[i] = i;
+}
 
 
 // new_capacity: (499 + 1) * 1.5 + 16 = 766, 大于500
 // NumberDictionary::ComputeCapacity(used_elements): 44 => 66  =>  128
 // size_threshold : 3 * 3 *  128  = 1152
 // size_threshold <= new_capacity =>  1152 <= 766 => false
-for (let i = 0; i < 44; i++) {
-    array1[i] = i;
-}
+// for (let i = 0; i < 44; i++) {
+//     array1[i] = i;
+// }
 
 // 回收
 global.gc();
