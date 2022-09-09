@@ -1,7 +1,6 @@
 
-var array1 = [0,1,2];
+var array1 = [,,2];
 // %DebugPrint(array1);
-
 
 // 容量 + 1024 = 3 + 1024 = 1027
 
