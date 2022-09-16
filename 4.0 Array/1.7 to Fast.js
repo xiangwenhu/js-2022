@@ -1,26 +1,21 @@
 
 var array1 = [0, 1, 2];
-
-
 // 1028
 array1[1027] = 1027;
 // %DebugPrint(array1);
 
 
-// 
-for (let index = 3; index < 600; index++) {
-
+// 填充数组
+for (let index = 3; index < array1.length; index++) {
     if(index === 83){
         console.log('index:before', index);
         %DebugPrint(array1);
         console.log('index:after', index);
         array1[index] = index;
         %DebugPrint(array1);
-        continue
+        break;
     }
-
-    array1[index] = index;
-  
+    array1[index] = index;  
 }
 
 // %DebugPrint(array1);
