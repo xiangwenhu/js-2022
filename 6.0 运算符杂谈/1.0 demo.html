@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // window.name 属性影响后面的输出, 其默认值为空字符串
+      // window.name = "window的name";
+
+      let name = "let-name";
+      const animal = {
+        name: "animal-Name",
+        getName() {
+          return this.name;
+        },
+      };
+      const log = console.log;
+      const getName = animal.getName;
+
+      log("getName():", getName());
+      log("person.getName():", animal.getName());
+      log("(person.getName)():", animal.getName());
+      log("(0, person.getName)():", (0, animal.getName)());
+    </script>
+  </body>
+</html>
