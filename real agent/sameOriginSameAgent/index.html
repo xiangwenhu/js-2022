@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>index</title>
+</head>
+
+<body>
+    <h1> 同源下的不个Realm（Window）拥有相同的Agent</h1>
+    <a href="./other.html" target="_blank" rel="opener">other页面</a>
+    <script>
+        function checkExecution() {
+            console.log('Checking execution in index page', new Date().toTimeString());
+        }
+
+        setInterval(checkExecution, 1000); // 每秒执行一次
+    </script>
+</body>
+
+</html>
