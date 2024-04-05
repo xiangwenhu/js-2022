@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iframe</title>
+</head>
+
+<body>
+    iframe content
+
+    <script>
+        function longRunningOperation() {
+            const startTime = Date.now();
+            let i = 0;
+            while (Date.now() - startTime < 5000) { // 假设执行5秒
+                i++;
+            }
+            console.log('Long operation finished in iframe page', new Date().toTimeString());
+        }
+
+        setTimeout(() => {
+            longRunningOperation();
+        }, 2000)
+
+    </script>
+</body>
+
+</html>
