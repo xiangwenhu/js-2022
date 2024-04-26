@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+    <script type="module">
+        console.log("index.html script");
+        import * as math from "./math.mjs";
+
+        ; (function init() {
+            const result = math.sum(1, 2);
+            console.log('result:', result);
+        })();
+    </script>
+</body>
+</html>

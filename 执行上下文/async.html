@@ -10,16 +10,21 @@
 <body>
 
     <script>
-        async function asyncFunction() {
+        async function test() {
             syncFun();
-            await 0;
+            const result = await asyncFunction();
+            console.log("result:", result);
         }
 
         function syncFun(){
             console.log('syncFun');
         }
 
-        asyncFunction()
+       async function asyncFunction(){
+            return new Promise.resolve(1);
+       }
+
+        test()
     </script>
 
 </body>
