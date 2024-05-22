@@ -38,6 +38,6 @@ const utils = {
 }
 
 
-if(module && module.exports) {
+if (typeof module === 'object' && module !== null && module.exports) {
     module.exports = utils
 }
