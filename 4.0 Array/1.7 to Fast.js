@@ -7,15 +7,24 @@ array1[1027] = 1027;
 
 // 填充数组
 for (let index = 3; index < array1.length; index++) {
-    if(index === 83){
-        console.log('index:before', index);
+    // if(index === 85){
+    //     console.log('index:before', index);
+    //     %DebugPrint(array1);
+    //     console.log('index:after', index);
+    //     array1[index] = index;
+    //     %DebugPrint(array1);
+    //     break;
+    // }
+
+
+
+    array1[index] = index;
+    // 测试
+    if (index == 10) {
+        array1[index] = index;  
         %DebugPrint(array1);
-        console.log('index:after', index);
-        array1[index] = index;
-        %DebugPrint(array1);
-        break;
+        break
     }
-    array1[index] = index;  
 }
 
 // %DebugPrint(array1);
