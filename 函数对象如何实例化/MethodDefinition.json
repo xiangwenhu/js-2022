@@ -1,0 +1,48 @@
+{
+    "type": "Script",
+    "sourceText": "var obj = {\n  fn(){\n\n  }\n}",
+    "ScriptBody": {
+        "type": "ScriptBody",
+        "sourceText": "var obj = {\n  fn(){\n\n  }\n}",
+        "StatementList": [
+            {
+                "type": "VariableStatement",
+                "sourceText": "var obj = {\n  fn(){\n\n  }\n}",
+                "VariableDeclarationList": [
+                    {
+                        "type": "VariableDeclaration",
+                        "sourceText": "obj = {\n  fn(){\n\n  }\n}",
+                        "BindingIdentifier": {
+                            "type": "BindingIdentifier",
+                            "sourceText": "obj",
+                            "name": "obj"
+                        },
+                        "Initializer": {
+                            "type": "ObjectLiteral",
+                            "sourceText": "{\n  fn(){\n\n  }\n}",
+                            "PropertyDefinitionList": [
+                                {
+                                    "type": "MethodDefinition",
+                                    "sourceText": "fn(){\n\n  }",
+                                    "ClassElementName": {
+                                        "type": "IdentifierName",
+                                        "sourceText": "fn",
+                                        "name": "fn"
+                                    },
+                                    "PropertySetParameterList": null,
+                                    "UniqueFormalParameters": [],
+                                    "FunctionBody": {
+                                        "type": "FunctionBody",
+                                        "sourceText": "{\n\n  }",
+                                        "directives": [],
+                                        "FunctionStatementList": []
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+}

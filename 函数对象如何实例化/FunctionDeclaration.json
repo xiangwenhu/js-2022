@@ -1,0 +1,112 @@
+{
+    "type": "FunctionDeclaration",
+    "strict": false,
+    "BindingIdentifier": {
+        "type": "BindingIdentifier",
+        "strict": false,
+        "name": "test"
+    },
+    "FormalParameters": [
+        {
+            "type": "SingleNameBinding",
+            "strict": false,
+            "BindingIdentifier": {
+                "type": "BindingIdentifier",
+                "strict": false,
+                "name": "a"
+            },
+            "Initializer": null
+        },
+        {
+            "type": "SingleNameBinding",
+            "location": {
+                "startIndex": 30,
+                "endIndex": 35
+            },
+            "strict": false,
+            "BindingIdentifier": {
+                "type": "BindingIdentifier",
+                "strict": false,
+                "name": "b"
+            },
+            "Initializer": {
+                "type": "NumericLiteral",
+                "strict": false,
+                "value": 1
+            }
+        }
+    ],
+    "FunctionBody": {
+        "type": "FunctionBody",
+        "strict": false,
+        "directives": [],
+        "FunctionStatementList": [
+            {
+                "type": "LexicalDeclaration",
+                "strict": false,
+                "LetOrConst": "let",
+                "BindingList": [
+                    {
+                        "type": "LexicalBinding",
+                        "strict": false,
+                        "BindingIdentifier": {
+                            "type": "BindingIdentifier",
+                            "strict": false,
+                            "name": "c"
+                        },
+                        "Initializer": {
+                            "type": "NumericLiteral",
+                            "strict": false,
+                            "value": 2
+                        }
+                    }
+                ]
+            },
+            {
+                "type": "ExpressionStatement",
+                "strict": false,
+                "Expression": {
+                    "type": "CallExpression",
+                    "strict": false,
+                    "CallExpression": {
+                        "type": "MemberExpression",
+                        "strict": false,
+                        "MemberExpression": {
+                            "type": "IdentifierReference",
+                            "strict": false,
+                            "escaped": false,
+                            "name": "console"
+                        },
+                        "IdentifierName": {
+                            "type": "IdentifierName",
+                            "strict": false,
+                            "name": "log"
+                        },
+                        "PrivateIdentifier": null,
+                        "Expression": null
+                    },
+                    "Arguments": [
+                        {
+                            "type": "IdentifierReference",
+                            "strict": false,
+                            "escaped": false,
+                            "name": "a"
+                        },
+                        {
+                            "type": "IdentifierReference",
+                            "strict": false,
+                            "escaped": false,
+                            "name": "b"
+                        },
+                        {
+                            "type": "IdentifierReference",
+                            "strict": false,
+                            "escaped": false,
+                            "name": "c"
+                        }
+                    ]
+                }
+            }
+        ]
+    }
+}
