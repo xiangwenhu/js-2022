@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>栈大小</title>
+    </head>
+    <body>
+        <script>
+            function getStackSize() {
+                var size = 0;
+                function fn() {
+                    size++;
+                    fn();
+                }
+                try {
+                    fn();
+                } catch (ex) {
+                    console.log("size=>" + size, "err=>" + ex);
+                }
+                return size;
+            }
+
+            getStackSize();
+        </script>
+    </body>
+</html>

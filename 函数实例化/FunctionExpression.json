@@ -1,0 +1,42 @@
+{
+    "type": "Script",
+    "strict": false,
+    "ScriptBody": {
+        "type": "ScriptBody",
+        "strict": false,
+        "StatementList": [
+            {
+                "type": "LexicalDeclaration",
+                "strict": false,
+                "LetOrConst": "const",
+                "BindingList": [
+                    {
+                        "type": "LexicalBinding",
+                        "strict": false,
+                        "BindingIdentifier": {
+                            "type": "BindingIdentifier",
+                            "strict": false,
+                            "name": "fn"
+                        },
+                        "Initializer": {
+                            "type": "FunctionExpression",
+                            "strict": false,
+                            "BindingIdentifier": {
+                                "type": "BindingIdentifier",
+                                "strict": false,
+                                "name": "test"
+                            },
+                            "FormalParameters": [],
+                            "FunctionBody": {
+                                "type": "FunctionBody",
+                                "strict": false,
+                                "directives": [],
+                                "FunctionStatementList": []
+                            }
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+}

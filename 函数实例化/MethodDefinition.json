@@ -1,0 +1,44 @@
+{
+    "type": "ScriptBody",
+    "strict": false,
+    "StatementList": [
+        {
+            "type": "VariableStatement",
+            "strict": false,
+            "VariableDeclarationList": [
+                {
+                    "type": "VariableDeclaration",
+                    "strict": false,
+                    "BindingIdentifier": {
+                        "type": "BindingIdentifier",
+                        "strict": false,
+                        "name": "obj"
+                    },
+                    "Initializer": {
+                        "type": "ObjectLiteral",
+                        "strict": false,
+                        "PropertyDefinitionList": [
+                            {
+                                "type": "MethodDefinition",
+                                "strict": false,
+                                "ClassElementName": {
+                                    "type": "IdentifierName",
+                                    "strict": false,
+                                    "name": "fn"
+                                },
+                                "PropertySetParameterList": null,
+                                "UniqueFormalParameters": [],
+                                "FunctionBody": {
+                                    "type": "FunctionBody",
+                                    "strict": false,
+                                    "directives": [],
+                                    "FunctionStatementList": []
+                                }
+                            }
+                        ]
+                    }
+                }
+            ]
+        }
+    ]
+}
