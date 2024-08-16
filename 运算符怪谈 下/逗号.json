@@ -1,0 +1,100 @@
+{
+    "type": "Script",
+    "ScriptBody": {
+        "type": "ScriptBody",
+        "StatementList": [
+            {
+                "type": "LexicalDeclaration",
+                "LetOrConst": "const",
+                "BindingList": [
+                    {
+                        "type": "LexicalBinding",
+                        "BindingIdentifier": {
+                            "type": "BindingIdentifier",
+                            "name": "animal"
+                        },
+                        "Initializer": {
+                            "type": "ObjectLiteral",
+                            "PropertyDefinitionList": [
+                                {
+                                    "type": "PropertyDefinition",
+                                    "PropertyName": {
+                                        "type": "IdentifierName",
+                                        "name": "name"
+                                    },
+                                    "AssignmentExpression": {
+                                        "type": "StringLiteral",
+                                        "value": "animal-Name"
+                                    }
+                                },
+                                {
+                                    "type": "MethodDefinition",
+                                    "ClassElementName": {
+                                        "type": "IdentifierName",
+                                        "name": "getName"
+                                    },
+                                    "PropertySetParameterList": null,
+                                    "UniqueFormalParameters": [],
+                                    "FunctionBody": {
+                                        "type": "FunctionBody",
+                                        "directives": [],
+                                        "FunctionStatementList": [
+                                            {
+                                                "type": "ReturnStatement",
+                                                "Expression": {
+                                                    "type": "MemberExpression",
+                                                    "MemberExpression": {
+                                                        "type": "ThisExpression"
+                                                    },
+                                                    "IdentifierName": {
+                                                        "type": "IdentifierName",
+                                                        "name": "name"
+                                                    },
+                                                    "PrivateIdentifier": null,
+                                                    "Expression": null
+                                                }
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                ]
+            },
+            {
+                "type": "ExpressionStatement",
+                "Expression": {
+                    "type": "CallExpression",
+                    "CallExpression": {
+                        "type": "ParenthesizedExpression",
+                        "Expression": {
+                            "type": "CommaOperator",
+                            "ExpressionList": [
+                                {
+                                    "type": "NumericLiteral",
+                                    "value": 0
+                                },
+                                {
+                                    "type": "MemberExpression",
+                                    "MemberExpression": {
+                                        "type": "IdentifierReference",
+                                        "escaped": false,
+                                        "name": "animal"
+                                    },
+                                    "IdentifierName": {
+                                        "type": "IdentifierName",
+                                        "name": "getName"
+                                    },
+                                    "PrivateIdentifier": null,
+                                    "Expression": null
+                                }
+                            ]
+                        }
+                    },
+                    "Arguments": []
+                }
+            }
+        ]
+    }
+}
