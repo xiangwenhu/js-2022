@@ -1,0 +1,112 @@
+{
+    "type": "Script",
+    "ScriptBody": {
+        "type": "ScriptBody",
+        "StatementList": [
+            {
+                "type": "LexicalDeclaration",
+                "LetOrConst": "let",
+                "BindingList": [
+                    {
+                        "type": "LexicalBinding",
+                        "BindingIdentifier": {
+                            "type": "BindingIdentifier",
+                            "name": "obj"
+                        },
+                        "Initializer": {
+                            "type": "ObjectLiteral",
+                            "PropertyDefinitionList": [
+                                {
+                                    "type": "PropertyDefinition",
+                                    "PropertyName": {
+                                        "type": "IdentifierName",
+                                        "name": "a"
+                                    },
+                                    "AssignmentExpression": {
+                                        "type": "NumericLiteral",
+                                        "value": 1
+                                    }
+                                },
+                                {
+                                    "type": "PropertyDefinition",
+                                    "PropertyName": {
+                                        "type": "IdentifierName",
+                                        "name": "b"
+                                    },
+                                    "AssignmentExpression": {
+                                        "type": "NumericLiteral",
+                                        "value": 2
+                                    }
+                                },
+                                {
+                                    "type": "PropertyDefinition",
+                                    "PropertyName": {
+                                        "type": "IdentifierName",
+                                        "name": "c"
+                                    },
+                                    "AssignmentExpression": {
+                                        "type": "NumericLiteral",
+                                        "value": 3
+                                    }
+                                },
+                                {
+                                    "type": "PropertyDefinition",
+                                    "PropertyName": {
+                                        "type": "IdentifierName",
+                                        "name": "d"
+                                    },
+                                    "AssignmentExpression": {
+                                        "type": "NumericLiteral",
+                                        "value": 4
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                ]
+            },
+            {
+                "type": "LexicalDeclaration",
+                "LetOrConst": "let",
+                "BindingList": [
+                    {
+                        "type": "LexicalBinding",
+                        "BindingPattern": {
+                            "type": "ObjectBindingPattern",
+                            "BindingPropertyList": [
+                                {
+                                    "type": "SingleNameBinding",
+                                    "BindingIdentifier": {
+                                        "type": "BindingIdentifier",
+                                        "name": "a"
+                                    },
+                                    "Initializer": null
+                                },
+                                {
+                                    "type": "SingleNameBinding",
+                                    "BindingIdentifier": {
+                                        "type": "BindingIdentifier",
+                                        "name": "b"
+                                    },
+                                    "Initializer": null
+                                }
+                            ],
+                            "BindingRestProperty": {
+                                "type": "BindingRestProperty",
+                                "BindingIdentifier": {
+                                    "type": "BindingIdentifier",
+                                    "name": "rest"
+                                }
+                            }
+                        },
+                        "Initializer": {
+                            "type": "IdentifierReference",
+                            "escaped": false,
+                            "name": "obj"
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+}
